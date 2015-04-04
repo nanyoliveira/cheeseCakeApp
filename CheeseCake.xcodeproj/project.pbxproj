@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CB926CA12D87B4C06EEC311 /* libPods-CheeseCake.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B389AF567A2DAABBFD18A3 /* libPods-CheeseCake.a */; };
 		69E60EA41ACF7A5C00D47CC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E60EA31ACF7A5C00D47CC1 /* main.m */; };
 		69E60EA71ACF7A5C00D47CC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E60EA61ACF7A5C00D47CC1 /* AppDelegate.m */; };
 		69E60EAA1ACF7A5C00D47CC1 /* CheeseCake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69E60EA81ACF7A5C00D47CC1 /* CheeseCake.xcdatamodeld */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10B389AF567A2DAABBFD18A3 /* libPods-CheeseCake.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CheeseCake.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64912D896902AB30F00E17A5 /* Pods-CheeseCake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheeseCake.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheeseCake/Pods-CheeseCake.release.xcconfig"; sourceTree = "<group>"; };
 		69E60E9E1ACF7A5C00D47CC1 /* CheeseCake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheeseCake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E60EA21ACF7A5C00D47CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69E60EA31ACF7A5C00D47CC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		69E60EBA1ACF7A5C00D47CC1 /* CheeseCakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheeseCakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E60EBF1ACF7A5C00D47CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69E60EC01ACF7A5C00D47CC1 /* CheeseCakeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheeseCakeTests.m; sourceTree = "<group>"; };
+		82F3F0D2FA068863C9FFB49B /* Pods-CheeseCake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheeseCake.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheeseCake/Pods-CheeseCake.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CB926CA12D87B4C06EEC311 /* libPods-CheeseCake.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		369A9981D095AE3D2CB6C682 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10B389AF567A2DAABBFD18A3 /* libPods-CheeseCake.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		69E60E951ACF7A5C00D47CC1 = {
 			isa = PBXGroup;
 			children = (
 				69E60EA01ACF7A5C00D47CC1 /* CheeseCake */,
 				69E60EBD1ACF7A5C00D47CC1 /* CheeseCakeTests */,
 				69E60E9F1ACF7A5C00D47CC1 /* Products */,
+				C56FF38ED89B8DEC57353F9B /* Pods */,
+				369A9981D095AE3D2CB6C682 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +137,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C56FF38ED89B8DEC57353F9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82F3F0D2FA068863C9FFB49B /* Pods-CheeseCake.debug.xcconfig */,
+				64912D896902AB30F00E17A5 /* Pods-CheeseCake.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69E60EC41ACF7A5C00D47CC1 /* Build configuration list for PBXNativeTarget "CheeseCake" */;
 			buildPhases = (
+				C701E9CF83268B6BF64933E7 /* Check Pods Manifest.lock */,
 				69E60E9A1ACF7A5C00D47CC1 /* Sources */,
 				69E60E9B1ACF7A5C00D47CC1 /* Frameworks */,
 				69E60E9C1ACF7A5C00D47CC1 /* Resources */,
+				B8355F86162E37C26438F25C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,6 +242,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B8355F86162E37C26438F25C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheeseCake/Pods-CheeseCake-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C701E9CF83268B6BF64933E7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		69E60E9A1ACF7A5C00D47CC1 /* Sources */ = {
@@ -347,6 +406,7 @@
 		};
 		69E60EC51ACF7A5C00D47CC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82F3F0D2FA068863C9FFB49B /* Pods-CheeseCake.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CheeseCake/Info.plist;
@@ -357,6 +417,7 @@
 		};
 		69E60EC61ACF7A5C00D47CC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64912D896902AB30F00E17A5 /* Pods-CheeseCake.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CheeseCake/Info.plist;
@@ -418,6 +479,7 @@
 				69E60EC61ACF7A5C00D47CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69E60EC71ACF7A5C00D47CC1 /* Build configuration list for PBXNativeTarget "CheeseCakeTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +488,7 @@
 				69E60EC91ACF7A5C00D47CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
