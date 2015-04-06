@@ -10,7 +10,8 @@
 
 @interface TableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UITextField *dateTitle;
-@property (weak, nonatomic) IBOutlet UITextField *authorText;
+
+@property (weak, nonatomic) IBOutlet UILabel *authorText;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @end
