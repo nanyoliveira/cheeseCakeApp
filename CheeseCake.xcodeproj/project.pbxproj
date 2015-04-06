@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0CB926CA12D87B4C06EEC311 /* libPods-CheeseCake.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B389AF567A2DAABBFD18A3 /* libPods-CheeseCake.a */; };
+		69D20F711AD05206003BCA65 /* AFNetworkingConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D20F701AD05206003BCA65 /* AFNetworkingConnect.m */; };
+		69D20F751AD30713003BCA65 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D20F741AD30713003BCA65 /* TableViewCell.m */; };
+		69D20F771AD3174D003BCA65 /* no-photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69D20F761AD3174D003BCA65 /* no-photo.jpg */; };
 		69E60EA41ACF7A5C00D47CC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E60EA31ACF7A5C00D47CC1 /* main.m */; };
 		69E60EA71ACF7A5C00D47CC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E60EA61ACF7A5C00D47CC1 /* AppDelegate.m */; };
 		69E60EAA1ACF7A5C00D47CC1 /* CheeseCake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69E60EA81ACF7A5C00D47CC1 /* CheeseCake.xcdatamodeld */; };
@@ -31,6 +34,11 @@
 /* Begin PBXFileReference section */
 		10B389AF567A2DAABBFD18A3 /* libPods-CheeseCake.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CheeseCake.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64912D896902AB30F00E17A5 /* Pods-CheeseCake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheeseCake.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheeseCake/Pods-CheeseCake.release.xcconfig"; sourceTree = "<group>"; };
+		69D20F6F1AD05206003BCA65 /* AFNetworkingConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkingConnect.h; sourceTree = "<group>"; };
+		69D20F701AD05206003BCA65 /* AFNetworkingConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingConnect.m; sourceTree = "<group>"; };
+		69D20F731AD30713003BCA65 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		69D20F741AD30713003BCA65 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		69D20F761AD3174D003BCA65 /* no-photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "no-photo.jpg"; sourceTree = "<group>"; };
 		69E60E9E1ACF7A5C00D47CC1 /* CheeseCake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheeseCake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E60EA21ACF7A5C00D47CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69E60EA31ACF7A5C00D47CC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -75,6 +83,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		69D20F6E1AD051D0003BCA65 /* afnetworking */ = {
+			isa = PBXGroup;
+			children = (
+				69D20F6F1AD05206003BCA65 /* AFNetworkingConnect.h */,
+				69D20F701AD05206003BCA65 /* AFNetworkingConnect.m */,
+			);
+			name = afnetworking;
+			sourceTree = "<group>";
+		};
+		69D20F721AD306BC003BCA65 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				69D20F731AD30713003BCA65 /* TableViewCell.h */,
+				69D20F741AD30713003BCA65 /* TableViewCell.m */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
 		69E60E951ACF7A5C00D47CC1 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +124,8 @@
 		69E60EA01ACF7A5C00D47CC1 /* CheeseCake */ = {
 			isa = PBXGroup;
 			children = (
+				69D20F721AD306BC003BCA65 /* cells */,
+				69D20F6E1AD051D0003BCA65 /* afnetworking */,
 				69E60EA51ACF7A5C00D47CC1 /* AppDelegate.h */,
 				69E60EA61ACF7A5C00D47CC1 /* AppDelegate.m */,
 				69E60EAB1ACF7A5C00D47CC1 /* ViewController.h */,
@@ -114,6 +142,7 @@
 		69E60EA11ACF7A5C00D47CC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				69D20F761AD3174D003BCA65 /* no-photo.jpg */,
 				69E60EA21ACF7A5C00D47CC1 /* Info.plist */,
 				69E60EA31ACF7A5C00D47CC1 /* main.m */,
 			);
@@ -231,6 +260,7 @@
 				69E60EB01ACF7A5C00D47CC1 /* Main.storyboard in Resources */,
 				69E60EB51ACF7A5C00D47CC1 /* LaunchScreen.xib in Resources */,
 				69E60EB21ACF7A5C00D47CC1 /* Images.xcassets in Resources */,
+				69D20F771AD3174D003BCA65 /* no-photo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69D20F711AD05206003BCA65 /* AFNetworkingConnect.m in Sources */,
+				69D20F751AD30713003BCA65 /* TableViewCell.m in Sources */,
 				69E60EA71ACF7A5C00D47CC1 /* AppDelegate.m in Sources */,
 				69E60EA41ACF7A5C00D47CC1 /* main.m in Sources */,
 				69E60EAD1ACF7A5C00D47CC1 /* ViewController.m in Sources */,
@@ -412,6 +444,7 @@
 				INFOPLIST_FILE = CheeseCake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -423,6 +456,7 @@
 				INFOPLIST_FILE = CheeseCake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
