@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "Utils.h"
 #import "TableViewCell.h"
+#import "DetailViewController.h"
 
 @interface ViewController ()
 
@@ -25,6 +27,9 @@
     self.dataTable.dataSource = self;
     
     [self getRESTData];
+    
+    [ self setTitle:@"CheeseCake list"];
+   
 
 }
 
@@ -65,15 +70,10 @@
     
     NSDictionary * currentData = (NSDictionary *) self.restData[indexPath.row];
     
-  
-
     if([[currentData allKeys] containsObject:@"image"])
     {
-        if([[currentData objectForKey:@"image"] isEqual:[NSNull null]])
+        if([[Utils sharedClient] testDictionaryField:@"image" fromData:currentData])
         {
-           // nulo
-        }
-        else{
             NSString *ImageURL = currentData [@"image"];
             NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
             cell.image.image = [UIImage imageWithData:imageData];
@@ -83,14 +83,15 @@
         
     }
     
-    if([[currentData allKeys] containsObject:@"content"])
-    {
-        
-    }
+  
     
     if([[currentData allKeys] containsObject:@"website"])
     {
-        
+        if([[Utils sharedClient]  testDictionaryField:@"website" fromData:currentData])
+        {
+            cell.webSite.text = [NSString stringWithFormat:@"From %@ website", [currentData objectForKey:@"website"] ];
+
+        }
     }
     
     NSString * date = @"";
@@ -98,13 +99,20 @@
     
     if([[currentData allKeys] containsObject:@"date"])
     {
-        date =currentData [@"date"];
+        
+        if([[Utils sharedClient]  testDictionaryField:@"date" fromData:currentData])
+        {
+            date =currentData [@"date"];
+        }
     }
     
     
     if([[currentData allKeys] containsObject:@"title"])
     {
-        title = currentData [@"title"] ;
+        if([[Utils sharedClient]  testDictionaryField:@"title" fromData:currentData])
+        {
+            title = currentData [@"title"] ;
+        }
     }
     
     
@@ -116,19 +124,35 @@
         cell.authorText.text =currentData [@"authors"];
     }
     
-   
-
-    
-    NSLog(@" oi  %@  \n \n *****************  \n \n", currentData[@"title"]);
-    
-    
-//    cell.dateTitle.text =
-    
-   //NSLog(@" oi  %@", self.restData[1]);
     
     return cell;
 }
 
+
+
+
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
+
+{
+    
+    if ([sender isKindOfClass:[TableViewCell class]])
+        
+    {
+        
+        if ([segue.destinationViewController isKindOfClass:[DetailViewController class]])
+            
+        {
+            
+            DetailViewController *nextViewController = segue.destinationViewController;
+            NSIndexPath *path = [self.dataTable indexPathForCell:sender];
+            NSDictionary *selectedObject = (NSDictionary *) self.restData[path.row];
+            nextViewController.dataObject = selectedObject;
+      
+        }
+        
+    }
+    
+}
 
 
 @end
