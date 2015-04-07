@@ -100,7 +100,7 @@
     
     if([[Utils sharedClient]  testDictionaryField:@"website" fromData:currentData])
     {
-        cell.webSite.text = [NSString stringWithFormat:@"From %@ website", [currentData objectForKey:@"website"] ];
+        cell.webSite.text = [NSString stringWithFormat:@"%@ website", [currentData objectForKey:@"website"] ];
     }
     
     
