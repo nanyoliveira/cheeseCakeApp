@@ -21,11 +21,29 @@
     
     
 }
-
-
--(void)setData
+- (void)viewDidAppear:(BOOL)animated
 {
+    [self showData];
+}
+
+
+
+
+-(void)showData
+{
+    [UIView transitionWithView:self.view
+                    duration:1
+                    options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        [self loadData];
+                        
+                    } completion:nil];
     
+}
+
+
+-(void)loadData
+{
     if([[Utils sharedClient] testDictionaryField:@"image" fromData:self.dataObject])
     {
         NSString *ImageURL = self.dataObject [@"image"];
@@ -36,7 +54,7 @@
     
     NSString * date = @"";
     NSString * website = @"";
-
+    
     if([[Utils sharedClient]  testDictionaryField:@"date" fromData:self.dataObject])
     {
         date =self.dataObject [@"date"];
@@ -46,7 +64,7 @@
         website = self.dataObject [@"website"];
     }
     self.dataText.text = [NSString stringWithFormat:@"%@ | %@ website", date, website];
-
+    
     
     if([[Utils sharedClient]  testDictionaryField:@"title" fromData:self.dataObject])
     {
@@ -57,8 +75,7 @@
     {
         self.contentText.text = self.dataObject [@"content"] ;
     }
-    
-    
+
 }
 
 - (void)didReceiveMemoryWarning {

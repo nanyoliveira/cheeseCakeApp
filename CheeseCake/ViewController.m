@@ -26,12 +26,18 @@
     self.dataTable.delegate = self;
     self.dataTable.dataSource = self;
     
-    [self getRESTData];
+  
     
     [ self setTitle:@"CheeseCake list"];
    
 
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+      [self getRESTData];
+}
+
 
 
 #pragma mark - REST/data
@@ -67,14 +73,30 @@
     }
     
     NSDictionary * currentData = (NSDictionary *) self.restData[indexPath.row];
+    
+    [UIView transitionWithView:self.view
+                    duration:1
+                    options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        
+                        [self loadCell:cell withData:currentData];
+                        
+                    } completion:nil];
+    
+    
+    return cell;
+}
 
+
+-(void) loadCell:(TableViewCell*)cell withData:(NSDictionary*)currentData
+{
     if([[Utils sharedClient] testDictionaryField:@"image" fromData:currentData])
     {
         NSString *ImageURL = currentData [@"image"];
         NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
         cell.image.image = [UIImage imageWithData:imageData];
     }
-   
+    
     if([[Utils sharedClient]  testDictionaryField:@"website" fromData:currentData])
     {
         cell.webSite.text = [NSString stringWithFormat:@"From %@ website", [currentData objectForKey:@"website"] ];
@@ -99,8 +121,7 @@
     {
         cell.authorText.text =currentData [@"authors"];
     }
-    
-    return cell;
+
 }
 
 #pragma mark - passing Data
