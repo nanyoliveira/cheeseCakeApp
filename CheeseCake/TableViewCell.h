@@ -9,10 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface TableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UITextField *dateTitle;
+
 @property (weak, nonatomic) IBOutlet UILabel *webSite;
+@property (weak, nonatomic) IBOutlet UILabel *dateTitle;
 
 @property (weak, nonatomic) IBOutlet UILabel *authorText;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
+
+
+
+-(void)markAsRead;
 
 @end

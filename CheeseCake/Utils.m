@@ -24,12 +24,19 @@
 
 -(BOOL) testDictionaryField: (NSString *)keyName fromData: (NSDictionary *) dataSource
 {
-    
-    if([[dataSource objectForKey:keyName] isEqual:[NSNull null]])
+    if([[dataSource allKeys] containsObject:keyName])
     {
-        return NO;
+        
+        if([[dataSource objectForKey:keyName] isEqual:[NSNull null]])
+        {
+            return NO;
+        }
+        else{
+            return YES;
+        }
+        
     }
-    return YES;
+    return NO;
 }
 
 @end

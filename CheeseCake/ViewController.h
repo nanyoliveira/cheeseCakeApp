@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "AFNetworkingConnect.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 
-
+- (IBAction)chooseKindOfSort:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *dataTable;
 
 
