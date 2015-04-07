@@ -35,6 +35,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
       [self getRESTData];
 }
 
@@ -127,9 +128,9 @@
 #pragma mark - passing Data
 - (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
-    
     if ([sender isKindOfClass:[TableViewCell class]])
     {
+        
         if ([segue.destinationViewController isKindOfClass:[DetailViewController class]])
         {
             
@@ -138,6 +139,7 @@
             NSIndexPath *path = [self.dataTable indexPathForCell:sender];
             NSDictionary *selectedObject = (NSDictionary *) self.restData[path.row];
             nextViewController.dataObject = selectedObject;
+            
         }
     }
 }
@@ -182,12 +184,11 @@
 -(void)sortByKey:(NSString *)key
 {
     NSArray *unsortedList = [self.restData copy];
-    NSArray * sortedList;
     
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:key  ascending:YES];
     
     self.restData= [self.restData sortedArrayUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
-    sortedList = [self.restData copy];
+
     
     [self.dataTable beginUpdates];
     

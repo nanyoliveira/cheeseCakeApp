@@ -2,7 +2,7 @@
 # platform :ios, '7.0'
 
 target 'CheeseCake' do
-pod 'AFNetworking', '2.2.1'
+pod 'AFNetworking', '2.5'
 end
 
 target 'CheeseCakeTests' do
